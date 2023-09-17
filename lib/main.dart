@@ -38,6 +38,7 @@ class _MyAppState extends State<MyApp> {
         home: PageView(
             controller: _pageController,
             scrollDirection: Axis.vertical,
+            padEnds: false,
             children: [
               HomeScreen(),
               DetailsScreen(),
