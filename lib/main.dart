@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sid_weather_app/providers/weather.dart';
 import 'package:sid_weather_app/ui/screens/details_screen/details_screen.dart';
@@ -17,35 +18,39 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
- final PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController(initialPage: 0);
 
-   @override
+  @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return ChangeNotifierProvider<WeatherProvider>(
       create: (context) => WeatherProvider(),
       child: MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-        
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         home: PageView(
-            controller: _pageController,
-            scrollDirection: Axis.vertical,
-            padEnds: false,
-            children: [
-              HomeScreen(),
-              DetailsScreen(),
-            ],
-          ),
+          controller: _pageController,
+          scrollDirection: Axis.vertical,
+          padEnds: false,
+          children: [
+            HomeScreen(),
+            DetailsScreen(),
+          ],
+        ),
       ),
     );
   }
 }
-
