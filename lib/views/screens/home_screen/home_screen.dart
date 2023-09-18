@@ -1,14 +1,14 @@
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
 import 'package:sid_weather_app/models/weather.dart';
-import 'package:sid_weather_app/providers/weather.dart';
-import 'package:sid_weather_app/ui/constants/colors.dart';
-import 'package:sid_weather_app/ui/widgets/custom_graph/custom_graph.dart';
+import 'package:sid_weather_app/view_model/weather.dart';
+import 'package:sid_weather_app/views/constants/colors.dart';
+import 'package:sid_weather_app/views/widgets/custom_graph/custom_graph.dart';
 
 import 'bottom_row.dart';
 
 class HomeScreen extends StatelessWidget {
-  String hintText = "Enter you city ...";
+  String hintText = "Enter your city ...";
   @override
   Widget build(BuildContext context) {
     var provider = context.watch<WeatherProvider>();
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: CustomColors.white,
         appBar: AppBar(
-         
+         centerTitle: true,
           title:const Text("Weather app"),
           elevation: 2.0,
         ),
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                           hintText: hintText,
                         ),
                         onSubmitted: (value) {
-                          print("entered city $value");
+                         // print("entered city $value");
                           provider.fetchWeatherAction(value);
                         },
                       )
@@ -88,9 +88,9 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Column(
                         children: [
-                          const SizedBox(
-                            height: 10.0,
-                          ),
+                          // const SizedBox(
+                          //   height: 10.0,
+                          // ),
                           Text(
                             provider.weeklyWeather.currentTime,
                             style: const TextStyle(
@@ -98,9 +98,9 @@ class HomeScreen extends StatelessWidget {
                               color: CustomColors.black,
                             ),
                           ),
-                          const SizedBox(
-                            height: 5.0,
-                          ),
+                          // const SizedBox(
+                          //   height: 5.0,
+                          // ),
                           Text(
                             provider.weeklyWeather.date,
                             style: const TextStyle(
@@ -109,8 +109,8 @@ class HomeScreen extends StatelessWidget {
                               color: CustomColors.black,
                             ),
                           ),
-                          Container(
-                            height: MediaQuery.of(context).size.height * .25,
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .22,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -126,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                                     color: CustomColors.black,
                                   ),
                                 ),
-                                const SizedBox(height: 10.0),
+                                const SizedBox(height: 8.0),
                                 Text(
                                   provider
                                       .weeklyWeather.weather[0].weatherDescription,
@@ -152,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                               ],
                               labelTexts: [
                                 "morning",
-                                "day",
+                                "afternoon",
                                 "evening",
                                 "night",
                               ],

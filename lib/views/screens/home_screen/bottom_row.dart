@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:sid_weather_app/ui/constants/colors.dart";
+import 'package:sid_weather_app/views/constants/colors.dart';
 
 class BottomRow extends StatelessWidget {
   final String pressure;
@@ -12,8 +12,8 @@ class BottomRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80.0,
-      padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
-      margin: EdgeInsets.only(bottom: 40.0),
+      padding:const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+      margin:const EdgeInsets.only(bottom: 40.0),
       child: Column(
         children: [
           Row(

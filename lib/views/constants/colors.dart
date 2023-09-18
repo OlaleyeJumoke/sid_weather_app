@@ -7,7 +7,6 @@ class CustomColors {
   static const Color white = Color(0xFFFFFFFF);
   static const Color red = Color(0xFFEC6E4C);
   static const Color lightRed = Color(0x55EC6E4C);
-
   static const Color yellow = Color(0xfff5da42);
   static const Color lightYellow = Color(0xaaf5da42);
   static const Color veryLightYellow = Color(0x22f5da42);

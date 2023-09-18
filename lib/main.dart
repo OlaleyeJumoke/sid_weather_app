@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sid_weather_app/providers/weather.dart';
-import 'package:sid_weather_app/ui/screens/details_screen/details_screen.dart';
-import 'package:sid_weather_app/ui/screens/home_screen/home_screen.dart';
+import 'package:sid_weather_app/view_model/weather.dart';
+import 'package:sid_weather_app/views/screens/details_screen/details_screen.dart';
+import 'package:sid_weather_app/views/screens/home_screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

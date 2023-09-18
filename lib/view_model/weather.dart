@@ -18,12 +18,12 @@ class WeatherProvider extends ChangeNotifier {
   }
 
   void _commitWeeklyWeather(WeeklyWeather weather) {
-    this._weeklyWeather = weather;
+    _weeklyWeather = weather;
     notifyListeners();
   }
 
   void _commitWeatherAvailable(bool isWeatherAvailable) {
-    this._isWeatherAvailable = isWeatherAvailable;
+   _isWeatherAvailable = isWeatherAvailable;
     notifyListeners();
   }
 }

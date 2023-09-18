@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:sid_weather_app/ui/constants/colors.dart';
+import 'package:sid_weather_app/views/constants/colors.dart';
 
 import 'custom_painter.dart';
 import 'graph_utils.dart';
@@ -67,7 +67,7 @@ Widget buildGraph(
     child: Container(
       width: double.infinity,
       height: double.infinity,
-      margin: EdgeInsets.only(top: 15.0),
+      margin: const EdgeInsets.only(top: 15.0),
       child: LayoutBuilder(
         builder: (context, constraints) {
           return CustomPaint(
